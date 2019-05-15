@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>用canvas绘制安卓logo</title>
+
+</head>
+
+<body>
+    <canvas id="android" width="1000" height="1000"></canvas>
+    <script>
+        function draw() {
+            /** @type {HTMLCanvasElement} */
+            var canvas = document.getElementById('android');
+            if (!canvas.getContext) return;
+            var ctx = canvas.getContext('2d');
+            ctx.clearRect(800, 400, 1000, 1000);
+            ctx.save();
+            var pi = Math.PI;
+
+            ctx.beginPath();
+            ctx.arc(800, 300, 100, pi, 0);
+            ctx.fillStyle = 'green';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(750, 270, 8, 0, 2 * pi);
+            ctx.arc(850, 270, 8, 0, 2 * pi);
+            ctx.fillStyle = '#fff';
+            ctx.fill();
+
+            ctx.beginPath()
+            ctx.moveTo(780, 280);
+            ctx.lineTo(720, 150);
+            ctx.restore();
+            ctx.lineWidth = 4;
+            ctx.strokeStyle = 'green';
+            ctx.stroke();
+
+
+            ctx.beginPath();
+            ctx.moveTo(820, 280);
+            ctx.lineTo(880, 150);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.fillStyle = 'green';
+            ctx.lineWidth = 200;
+            ctx.lineCap = 'round';
+            ctx.fillRect(700, 300, 200, 200);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(660, 330);
+            ctx.lineTo(660, 450);
+            ctx.moveTo(940, 330);
+            ctx.lineTo(940, 450);
+            ctx.moveTo(750, 500);
+            ctx.lineTo(750, 550);
+            ctx.moveTo(850, 500);
+            ctx.lineTo(850, 550);
+            ctx.lineWidth = 40;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.clearRect(700, 296, 200, 16);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        draw();
+    </script>
+
+
+
+</body>
+
+</html>

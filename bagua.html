@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>canvas八卦logo</title>
+
+</head>
+
+<body>
+    <canvas id="logo" width="400" height="400" style="background: #e2e2e2"></canvas>
+    <script>
+        function draw() {
+            /** @type {HTMLCanvasElement} */
+            var canvas = document.getElementById('logo');
+            var ctx = canvas.getContext('2d');
+            var pi = Math.PI;
+            var color = 'rgb(' + randomInt(0, 255) + ',' + randomInt(0, 255) + ',' + randomInt(0, 255) + ')';
+
+            function randomInt(from, to) {
+                return parseInt(Math.random() * (to - from + 1) + from);
+            }
+
+            ctx.beginPath();
+            ctx.arc(200, 200, 80, 1.5 * Math.PI, Math.PI / 2, false);
+            ctx.fillStyle = "white";
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(200, 200, 80, 1.5 * Math.PI, Math.PI / 2, true);
+            ctx.fillStyle = "#000";
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(200, 160, 40, 0, pi * 2, false);
+            ctx.fillStyle = "#fff";
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(200, 240, 40, 0, pi * 2, false);
+            ctx.fillStyle = "#000";
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(200, 240, 4, 0, pi * 2);
+            ctx.fillStyle = "#fff";
+            ctx.closePath();
+            ctx.fill();
+            
+            ctx.beginPath();
+            ctx.arc(200, 160, 4, 0, pi * 2);
+            ctx.fillStyle = "#000";
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.font='50px Arial';
+            ctx.shadowColor = 'rgba('+randomInt(0,255)+','+randomInt(0,255)+','+randomInt(0,255)+'0.1)';
+            ctx.shadowOffsetX = 10;
+            ctx.shadowOffsetY = -10;
+            ctx.fillText('hello',100,100);
+            ctx.restore();
+        }
+        draw();
+    </script>
+
+</body>
+
+</html>
