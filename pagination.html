@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        body {
+            background: #888;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .wrap {
+            display: flex;
+            margin-top: 900px;
+            flex-direction: column;
+            width: 1000px;
+            margin: 100px auto;
+            align-items: center;
+        }
+
+        .pagination {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .pagination li {
+            text-align: center;
+            display: inline;
+        }
+
+        .pagination a {
+            float: left;
+            display: block;
+            font-size: 14px;
+            color: #fff;
+            padding: 5px 12px;
+            margin-left: -1px;
+            border: 1px solid transparent;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            cursor: default;
+            outline: none;
+        }
+
+        .modal-1 a {
+            color: rgb(121, 121, 207);
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .modal-1 a:hover {
+            background: rgb(243, 241, 241);
+        }
+
+        .modal-1 li:first-child a {
+            border-radius: 6px 0 0 6px;
+            -moz-border-radius: 6px 0 0 6px;
+            -webkit-border-radius: 6px 0 0 6px;
+        }
+
+        .modal-1 li:last-child a {
+            border-radius: 0 6px 6px 0;
+            -moz-border-radius: 0 6px 6px 0;
+            -webkit-border-radius: 0 6px 6px 0;
+        }
+
+        .modal-1 a.active,
+        .modal-1 a:active {
+            background: rgb(89, 139, 247);
+            color: #fff;
+
+            border: 1px solid rgb(89, 139, 247);
+        }
+
+        .modal-2 a {
+            color: gray;
+            background: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .modal-2 a:hover {
+            color: red;
+            background: rgb(240, 236, 236);
+        }
+
+        .modal-2 a.active,
+        .modal-2 a:active {
+            color: #fff;
+            background: red;
+            border: 1px solid red;
+        }
+
+        .modal-2 li:first-child a {
+            border-radius: 50px 0 0 50px;
+            -moz-border-radius: 50px 0 0 50px;
+            -webkit-border-radius: 50px 0 0 50px;
+        }
+
+        .modal-2 li:last-child a {
+            border-radius: 0 50px 50px 0;
+            -moz-border-radius: 0 50px 50px 0;
+            -webkit-border-radius: 0 50px 50px 0;
+        }
+
+        .modal-3 a {
+            color: #fff;
+            margin-right: 4px;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+        }
+
+        .modal-3 a:hover {
+            background: green;
+        }
+
+        .modal-3 a.active,
+        .modal-3 a:active {
+            background: darkgreen;
+        }
+
+        .modal-4 a {
+            background: rgb(236, 157, 10);
+            color: #fff;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .modal-4 a:hover {
+            background: rgb(231, 110, 11);
+
+        }
+
+        .modal-4 a.active,
+        .modal-4 a:active {
+            background: rgb(214, 105, 3);
+        }
+
+        .modal-4 li:first-child a {
+            border-radius: 50px 0 0 50px;
+            -moz-border-radius: 50px 0 0 50px;
+            -webkit-border-radius: 50px 0 0 50px;
+            width: 100px;
+        }
+
+        .modal-4 li:last-child a {
+            border-radius: 0 50px 50px 0;
+            -moz-border-radius: 0 50px 50px 0;
+            -webkit-border-radius: 0 50px 50px 0;
+            width: 100px;
+        }
+
+        .modal-5 {
+            position: relative;
+        }
+
+        .modal-5:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 35px;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0) 100%);
+            background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0) 100%);
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 40%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.65) 60%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .modal-5 a {
+            color: rgb(129, 129, 12);
+            position: relative;
+            height: 35px;
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-5 a:hover {
+            color: #fff;
+        }
+
+        .modal-5 a:hover:after {
+            content: '';
+            background: blue;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+            z-index: -1;
+        }
+
+        /*  巧用伪类before,after */
+        .modal-5 li:first-child a:hover:after,
+        .modal-5 li:last-child a:hover:after {
+            display: none;
+        }
+
+        .modal-5 a.active{
+            background: rgb(92, 92, 238);
+            color: #fff;
+        }
+        /* .modal-5 a.active:before{
+            content:'';
+            position: absolute;
+            top: -11px;
+            left: -10px;
+            width: 18px;
+            z-index: -1;
+            background: red;
+            border: 10px solid transparent;
+            border-bottom: 7px solid #104477;
+        } */
+        .modal-6 a{
+            background: #fff;
+            color: rgb(92, 91, 91);
+            border-top: none;
+            border-bottom: none;
+            border: 1px solid rgb(230, 225, 225);
+            padding: 10px 16px;
+        }
+        .modal-6 a:hover{
+            color: red;
+            background: rgb(194, 189, 189);
+            border-color: transparent;
+            /* 巧用transparent */
+        }
+        .modal-6 a.active,
+        .modal-6 a:active{
+            color: red;
+            -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25) inset;
+            -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25) inset;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.25) inset;
+        }
+        .modal-6 li:first-child a{
+            border-radius: 50% 0 0 50%;
+            position: relative;
+        }
+        .modal-6 li:last-child a{
+            border-radius: 0 50% 50% 0;
+            position: relative;
+        }
+        .modal-6 li:first-child a:after{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+            background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+        }
+        .modal-6 li:last-child a:after{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+            background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="pagination modal-1">
+            <li><a href="#" class="prev">&laquo;</a></li>
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#" class="next">&raquo;</a></li>
+        </ul>
+        <ul class="pagination modal-2">
+            <li><a href="#" class="prev">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#" class="active">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#" class="next">&raquo</a></li>
+        </ul>
+        <ul class="pagination modal-3">
+            <li><a href="#" class="prev">&laquo;</a></li>
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#" class="next">&raquo;</a></li>
+        </ul>
+        <ul class="pagination modal-4">
+            <li><a href="#" class="prev">Previous</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#" class="active">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#" class="next">Next</a></li>
+        </ul>
+        <ul class="pagination modal-5">
+            <li><a href="#" class="prev fa fa-arrow-left"></a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#" class="active">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#" class="next fa fa-arrow-right"></a></li>
+        </ul>
+
+        <ul class="pagination modal-6">
+            <li><a href="#" class="prev">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#" class="active">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#" class="next">&raquo;</a></li>
+        </ul>
+    </div>
+
+
+
+
+</body>
+
+</html>
