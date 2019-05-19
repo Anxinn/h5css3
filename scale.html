@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .small {
+            width: 400px;
+            cursor: pointer;
+        }
+
+        body,
+        .layer {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .layer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #000;
+            display: none;
+        }
+
+        .layer span {
+            position: absolute;
+            color: #fff;
+            right: 50px;
+            top: 50px;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .layer span:hover {
+            color: gray;
+        }
+
+        .img1 {
+            width: 800px;
+            animation: show 2s;
+        }
+
+        @keyframes show {
+            from {
+                /* transform: scale(0) */
+                width: 0;
+            }
+
+            to {
+                /* transform: scale(2) */
+                width: 800px;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .img1 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" class="small" src="img/paris.jpg">
+    <div class="layer" id="layer">
+        <span class="close">X</span>
+        <img id="img1" class="img1">
+    </div>
+    <script>
+        var img = document.getElementById('img');
+        var layer = document.getElementById('layer');
+        var img1 = document.getElementById('img1');
+        var close = layer.getElementsByTagName('span')[0];
+        img.onclick = function () {
+            layer.style.display = 'flex';
+            img1.src = this.src;
+        }
+        close.onclick = function () {
+            layer.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
