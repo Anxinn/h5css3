@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 800px;
+            height: 800px;
+            margin: 0 auto;
+            background: #000;
+            position: relative;
+        }
+
+        .sun {
+            width: 100px;
+            height: 100px;
+            background: rgb(248, 107, 35);
+            border-radius: 50%;
+            box-shadow: 5px 5px 10px rgb(248, 107, 35), -5px 5px 10px rgb(248, 107, 35), -5px -5px 10px rgb(248, 107, 35), 5px -5px 10px rgb(248, 107, 35);
+            transform: translate(350px, 350px);
+            position: absolute;
+        }
+
+        .earthline {
+            width: 300px;
+            height: 300px;
+            background: transparent;
+            border: 1px dashed gray;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(250px, 250px);
+        }
+
+        .moonline {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: transparent;
+            border: 1px dashed gray;
+            border-radius: 50%;
+            transform: translate(100px, 100px);
+        }
+
+        .earth {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: purple;
+            border-radius: 50%;
+            left: -30px;
+            top: 120px;
+            transform-origin: 180px 30px;
+            /* 以旋转中心就基准的坐标，假设旋转中心坐标00，相对于00的初始坐标 */
+            animation: rotate 2s infinite linear;
+        }
+
+        .moon {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: green;
+            border-radius: 50%;
+            left: 80px;
+            top: 380px;
+            transform-origin: 320px 20px;
+            /* 以旋转中心为原点的相对原点坐标 */
+            animation: rotate 5s infinite linear;
+        }
+
+        .moon1 {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background: blue;
+            border-radius: 50%;
+            left: -5px;
+            top: 145px;
+            transform-origin: 155px 5px;
+            /* 以旋转中心00为原点的相对坐标 */
+            animation: rotate 5s infinite linear;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sun"></div>
+        <div class="earthline">
+            <div class="earth"></div>
+            <div class="moon1"></div>
+        </div>
+        <div class="moonline">
+        </div>
+        <div class="moon"></div>
+    </div>
+</body>
+
+</html>

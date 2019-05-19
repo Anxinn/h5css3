@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>cssnotes</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* 关于background的tips */
+        .bg {
+            width: 1000px;
+            height: 100px;
+            position: sticky;
+            top: 200px;
+
+            /* background: url(img/bg.jpg) no-repeat; */
+            /* background-position: 10px 30px; */
+            /* background-size: 10px 30px; */
+            /* background-size:10px; */
+            /* background-size:cover;背景覆盖div,图像会遗失；contain;背景被div包含，非全铺；npx mpx (length);设置所铺图像的大小；此时如果只有一个值，第二个值会根据图像比例auto; */
+            /* background-size: cover; */
+            /* background-position: left top;right bottom;center top;center bottom;center center;30% 50%;npx mpx;表示div开始铺图像的起点位置； */
+            margin: 0 auto;
+            border: 1px solid red;
+            /* background-repeat: repeat-x;repeat-y;no-repeat; */
+            padding: 30px;
+            background-origin: content-box;
+            /* background-origin:padding-box,border-box,content-box;是background-position之后的相对位置,图像的位置是origin+position共同作用的位置 */
+            /* origin:border-box and padding-box不受padding影响，显示position作用之后的值；content-box受padding影响，显示position和padding共同作用的值 */
+            /* 简写的顺序依次是：color;image; repeat;position;size;origin*/
+            /* text-align:left;right;center */
+            /* <p><span>sdf</span></p>p:text-align:right;span会自动在right */
+            /* text-indent 文本第一行的缩进*/
+            /* text-shadow 文本阴影 ;和boxshadow对应*/
+            text-shadow: 10px 10px 5px #000;
+            /* vertical-align: top; */
+            /* font-style:italic;斜体*/
+            /* 16px=1em; h1 {font-size:2.5em;}  40px/16=2.5em */
+            /* body {font-size:100%;} h1 {font-size:2.5em;} h2 {font-size:1.875em;} p {font-size:0.875em;}  兼容浏览器 */
+        }
+
+        ul {
+            /* list-style-image: url(img/close.jpg); 显示每项li的bg*/
+            list-style-type: none;
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        /* ul li{
+            background-image: url(img/close.jpg);
+            background-position: left top;
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            padding-left: 30px;
+            /* background-origin: padding-box;paddingbox是默认值，如果是contentbox，则图像会和li文字重合 */
+        /* 设置带有背景图片的li */
+
+        /* text-align;设置文字水平对齐；vertical-align:设置文字垂直对齐,比如表格对齐文字，这两个非常好用*/
+        /* border-collapse:collapse设置表格的边框是否合并为一个边框，默认是没合并的，就是双边框，不好看*/
+        /* display:none;不占据父元素空间；opacity=0;visibility=hidden;虽然不显示，但是会占据父元素空间 */
+        /* display:inline;可以把块元素变为内联元素；display= block;可以把内联元素变为块元素 */
+        /* position:sticky;是一种介于fixed和relative之间的值，一般应用于导航条;sticky不占据文档流，fixed不占据文档流；不随滚动条移动,设定lefttoprightbottom之一才work*/
+        /* fixed不仅可以用于上下，也可以用于左右 */
+        /*  overflow:hidden;scoll;overflow-x;overflow-y;*/
+        /* float:left;right; clear:left;right;both;清除浮动 */
+        /* vertical一般作用于内联元素，span,img,...经常和lineheight搭配使用，也可以把块元素转化为内联元素，如果displayinline;inlineblock,;把父元素height=lineheight;子内联元素verticalalignmiddle,子元素居中 */
+        /* lineheight= height;display:inlineblock;verticalalign;middle;可以居中 */
+        /* *所有元素；p>*;p所有子元素；>直接子元素；div+p;紧跟div的同胞p,div~p;div后面所有同胞p */
+        /* p:empty;选择没有子元素的p;:empty选择没有任何子元素的元素 */
+        /*  p:first-child;第一个p;p:first-child a;p a:first-child;p:last-child;p>i:first-child*/
+        /* :after;:before; */
+        /* opacity:0.4; filter:alpha(opacity=40); 兼容浏览器*/
+        /* border-width: 5px; border-style: solid; border-color: black transparent transparent transparent; css画三角形*/
+        /* textalign和verticalalign一样，需要把子元素变为内联元素，display，inline,inlineblock,才会生效， */
+        /* textalign写在父元素里面，verticalalign写在子元素里面，都是针对内联元素，非块级元素 */
+        /* 一个元素可以同时设置多个backgroundimage,用，分割就OK,显示在最上面的那个是排在第一个img */
+        /* rgba(),最后一个参数是0-1，定义了颜色的opacity */
+        /* text-shadow: 10px 20px 4px rgba(0,0,0,.6);第一个水平距离，第二个垂直距离，第三个模糊程度，也就是4px */
+        /*  */
+        /* box-shadow: 10px 10px 10px rgba(0,0,0,0.2); 第一个水平距离，第二个垂直距离，第三个模糊程度*/
+        /* box-shadow: 10px 10px 10px 100px rgba(0,0,0,0.2); 参数：1.水平，2,垂直，3,模糊程度，4，阴影大小，也就是阴影宽度；5，color*/
+
+
+        body {
+            height: 2000px;
+        }
+
+        /* .center{
+    text-align: center;
+    vertical-align:middle;
+    height: 800px;
+    width: 1000px;
+} */
+
+        .para {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        .inner {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+            background: blue;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .para1::after {
+            /* content: url(img/close.jpg); */
+
+        }
+
+        .para1:before {
+            /* content:url(img/close.jpg); */
+            /* 善用before和after,各种选择器，content内容不一定是文字， */
+        }
+
+        input[type="search"] {
+            background-image: url(img/close.jpg);
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            background-origin: content-box;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            transition: all 1s ease;
+            width: 300px;
+
+        }
+
+        input[type="search"]:focus {
+            width: 500px;
+            background: red;
+        }
+
+        textarea {
+            resize: both;
+        }
+
+        .d1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="bg">textshadow</div> -->
+    <div class="center">
+        <!-- <img src="img/paris.jpg">  -->
+        sdfsdf
+    </div>
+    <div class="para">
+        <div class="inner">
+            <img src="img/paris.jpg">
+        </div>
+
+    </div>
+    <p class="para1">sdf</p>
+    <input type="search">
+    <textarea>s</textarea>
+    <div class="d1"></div>
+
+
+</body>
+
+</html>
