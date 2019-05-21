@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .wrap {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+
+        .inner {
+            /* opacity: 0.2; */
+        }
+
+        .inner1,
+        .inner1:before,
+        .inner1:after {
+            width: 140px;
+            height: 140px;
+            background: rgba(240, 12, 4, 0.3);
+        }
+
+        .inner2,
+        .inner2:before,
+        .inner2:after {
+            width: 150px;
+            height: 150px;
+            background: rgba(240, 146, 4, 0.3);
+        }
+
+        .inner:before,
+        .inner:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .inner:before {
+            transform: rotate(30deg);
+        }
+
+        .inner:after {
+            transform: rotate(60deg);
+        }
+
+        .wrap>* {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .rotate1 {
+            animation: rotate1 5s infinite linear;
+        }
+
+        @keyframes rotate1 {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotate2 {
+            animation: rotate2 5s infinite linear;
+        }
+
+        @keyframes rotate2 {
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="rotate1">
+            <div class="inner1 inner"></div>
+        </div>
+        <div class="rotate2">
+            <div class="inner2 inner"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
