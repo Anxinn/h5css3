@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		.pencil {
+			width: 60px;
+			height: 500px;
+			margin: 100px auto;
+			position: relative;
+		}
+
+		.left,
+		.middle,
+		.right {
+			display: block;
+			height: 300px;
+			float: left;
+			position: relative;
+		}
+
+		.left,
+		.right {
+			width: 15px;
+		}
+
+		.middle {
+			width: 30px;
+		}
+
+		.top {
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			border-bottom: 60px solid rgb(233, 230, 216);
+			position: relative;
+
+		}
+
+		.top:before {
+			content: '';
+			position: absolute;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 20px solid rgb(19, 189, 160);
+			left: -10px;
+		}
+
+		.middle:before {
+			content: '';
+			position: absolute;
+			margin-top: -10px;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-bottom: 10px solid rgb(19, 189, 160);
+		}
+
+		.left:before {
+			content: '';
+			position: absolute;
+			margin-top: -10px;
+			border-left: 10px solid transparent;
+			border-right: 5px solid transparent;
+			border-bottom: 10px solid rgb(19, 189, 160);
+		}
+
+		.right:before {
+			content: '';
+			position: absolute;
+			margin-top: -10px;
+			border-left: 5px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid rgb(19, 189, 160);
+		}
+
+		.left {
+			background: linear-gradient(to right, #f2d41c, #e1c413);
+		}
+
+		.right {
+			background: linear-gradient(to right, #f2d41c, #e1c413);
+		}
+
+		.middle {
+			background: #f9dc32;
+
+		}
+
+		.bottom {
+			clear: both;
+			height: 20px;
+			background: linear-gradient(to bottom, black, yellow, black, yellow, black);
+			border-radius: 0 0 10px 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="pencil">
+		<div class="top"></div>
+		<div class="left"></div>
+		<div class="middle"></div>
+		<div class="right"></div>
+		<div class="bottom"></div>
+	</div>
+</body>
+
+</html>
