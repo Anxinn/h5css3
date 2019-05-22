@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>before after and adapt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 1080px;
+            margin: 100px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color: rgba(0, 0, 0, .5);
+            padding: 80px;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content-item {
+            width: 40%;
+        }
+
+        .title {
+            text-transform: uppercase;
+            font-size: 30px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .header {
+            text-transform: capitalize;
+            color: rgba(0, 0, 0, .7);
+            font-size: 20px;
+            position: relative;
+            margin: 20px 0 30px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        p {
+            line-height: 24px;
+        }
+
+        .title:before {
+            position: absolute;
+            content: '';
+            width: 40px;
+            border: 2px solid green;
+            border-left: none;
+            border-right: none;
+            bottom: -2px;
+        }
+
+        .header:before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgb(181, 228, 181);
+            position: absolute;
+            left: -20px;
+            z-index: -1;
+        }
+
+        @media screen and (max-width:680px) {
+            .content-item {
+                width: 100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title">main header</div>
+        <div class="content">
+            <div class="content-item">
+                <h5 class="header">first header</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius adipisci, sed libero. Iste asperiores
+                    suscipit, consequatur debitis animi impedit numquam facilis iusto porro labore dolorem, maxime magni
+                    incidunt delectus est! </p>
+            </div>
+            <div class="content-item">
+                <h5 class="header">second header</h5>
+                <p> Totam at eius excepturi deleniti sed, error repellat itaque omnis maiores tempora ratione dolor
+                    velit minus porro aspernatur repudiandae labore quas adipisci esse, nulla tempore voluptatibus
+                    cupiditate, provident, atque. </p>
+            </div>
+            <div class="content-item">
+                <h5 class="header">third header</h5>
+                <p>Possimus deserunt nisi perferendis, consequuntur odio et aperiam, est, dicta dolor itaque sunt
+                    laborum, magni qui optio illum dolore laudantium similique harum. Eveniet quis, libero eligendi
+                    delectus repellendus repudiandae ipsum. </p>
+            </div>
+            <div class="content-item">
+                <h5 class="header">fourth header</h5>
+                <p>Vel nam odio dolorem, voluptas sequi minus quo tempore, animi est quia earum maxime. Reiciendis quae
+                    repellat, modi non, veniam natus soluta at optio vitae in excepturi minima eveniet dolor debitis
+                    inventore ad eveniet. </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
