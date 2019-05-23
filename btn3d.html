@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        input,
+        button {
+            outline: none;
+        }
+
+        input {
+            border: 2px solid rgb(129, 196, 235);
+            padding-left: 20px;
+        }
+
+        input::placeholder {
+            color: rgba(0, 0, 0, .3);
+            font-style: italic;
+            font-size: 22px;
+            line-height: 50px;
+        }
+
+        .search {
+            width: 800px;
+            display: flex;
+            margin: 100px auto;
+            height: 60px;
+            box-shadow: 1px 1px rgb(51, 153, 212),
+                2px 2px rgb(51, 153, 212),
+                3px 3px rgb(51, 153, 212),
+                4px 4px rgb(51, 153, 212),
+                5px 5px rgb(51, 153, 212),
+                6px 6px rgb(51, 153, 212),
+                7px 7px rgb(51, 153, 212);
+        }
+
+        button {
+            width: 100px;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            background: rgb(129, 196, 235);
+            border: none;
+            cursor: pointer;
+        }
+
+        input {
+            flex: 1;
+            display: block;
+        }
+    </style>
+    <head>
+    <body>
+        <div class="search">
+            <input type="text" placeholder="search here">
+            <button type="button">go!</button>
+        </div>
+    </body>
+
+</html>
