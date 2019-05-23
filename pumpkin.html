@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>use css draw a pumpkin</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+        }
+
+        .pumpkin {
+            margin: 400px auto;
+            width: 300px;
+            height: 230px;
+            background: #f68632;
+            border: 8px solid rgb(160, 66, 4);
+            border-radius: 110px;
+            position: relative;
+            box-shadow: inset 0 0px 20px #a14907, 0 0 30px -4px red;
+        }
+
+        .pumpkin:before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 70px;
+            background: rgb(2, 99, 42);
+            border-radius: 30px/25px;
+            top: -62px;
+            left: 50%;
+            margin-left: -4px;
+            display: inline-block;
+            transform: rotate(20deg);
+            z-index: -1;
+        }
+
+        .eye {
+            position: absolute;
+            width: 20px;
+            height: 30px;
+            border-style: solid;
+            border-width: 30px;
+            border-color: transparent transparent #000 transparent;
+        }
+
+        .eyeleft {
+            left: 60px;
+            top: 20px;
+            transform: rotate(20deg) scale(1.2, 1.2);
+        }
+
+        .eyeright {
+            right: 60px;
+            top: 20px;
+            transform: rotate(-20deg) scale(1.2, 1.2);
+        }
+
+        .mouse {
+            position: absolute;
+            width: 150px;
+            height: 70px;
+            border-bottom: 16px solid #000;
+            border-radius: 50%;
+            left: 50%;
+            margin-left: -75px;
+            bottom: 30px;
+        }
+
+        .mouse .eye:nth-child(1) {
+            transform: scale(0.4, 0.4);
+            top: 6px;
+        }
+
+        .mouse .eye:nth-child(2) {
+            transform: scale(0.6, 0.6)rotate(-20deg);
+            left: 80px;
+            top: 4px;
+        }
+
+        .mouse .eye:nth-child(3) {
+            transform: scale(0.5, 0.5) rotate(10deg);
+            left: 40px;
+            top: 7px;
+        }
+
+        .side,
+        .side:before {
+            position: absolute;
+            width: 80%;
+            height: 99%;
+            border-radius: 90px/80px;
+            left: 50%;
+            margin-left: -40%;
+        }
+
+        .side {
+            border-top: 10px solid rgb(160, 66, 4);
+        }
+
+        .side:before {
+            content: '';
+            border-bottom: 10px solid rgba(160, 66, 4, .6);
+        }
+
+        .side1,
+        .side1:before {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            left: 50%;
+            margin-left: -25%;
+            border-radius: 80px/80px;
+        }
+
+        .side1 {
+            border-top: 13px solid rgb(160, 66, 4);
+        }
+
+        .side1:before {
+            content: '';
+            border-bottom: 10px solid rgba(160, 66, 4, .6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pumpkin">
+        <div class="eye eyeleft"></div>
+        <div class="eye eyeright"></div>
+        <div class="mouse">
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="eye"></div>
+        </div>
+        <div class="side"></div>
+        <div class="side1"></div>
+
+
+    </div>
+
+</body>
+
+</html>
