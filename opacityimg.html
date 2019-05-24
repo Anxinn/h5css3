@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background:#000;
+        }
+
+        .wrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            display: flex;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+        }
+        .box *{
+            transition:1s;
+            text-align: center;
+        }
+        img{
+            opacity: .4;
+            filter:grayscale(100%);
+        }
+        .overlay:nth-child(1){
+            background:rgb(190, 96, 175);
+        }
+
+        .overlay:nth-child(2){
+            background:rgb(70, 216, 155);
+        }
+        .overlay:nth-child(3){
+            background:rgb(231, 178, 4);
+        }
+        img:hover{
+            opacity: 1;
+        }
+        .box:after{
+            content:'some text';
+            width:80%;
+            color:#fff;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #fff;
+            border-left:none;
+            border-right:none;
+            position:absolute;
+            top:0;
+            left:0;
+            text-align: center;
+            left:50%;
+            margin-left:-40%;
+            top:50%;
+            margin-top:-30px;
+            opacity: .4;
+            font-size: 20px;
+            transition: 1s;
+            font-weight: lighter;
+        }
+        .box:hover:after,.box:hover img{
+            opacity: 1;
+        }
+        .box:hover:after{
+            transform: rotate(-45deg) ;  
+        }
+        a{
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom: 0;
+        }
+        /* a平铺整个box的一显示方法 */
+
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="box overlay">
+    <img src="img1/7.jpg">
+    <a href="#"></a>
+    </div>
+    <div class="box overlay">
+    <img src="img1/7.jpg">
+    <a href="#"></a>
+    </div>
+    <div class="box overlay">
+    <img src="img1/7.jpg">
+    <a href="#"></a>
+    </div>
+</div>
+
+</body>
+
+</html>
