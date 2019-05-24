@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>pic adapt</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url(img3/bg.png) left top;
+        }
+
+        .wrap {
+            width: 90%;
+            max-width: 1100px;
+            min-width: 300px;
+            margin: 50px auto;
+        }
+
+        .columns {
+            column-count: 3;
+            column-gap: 15px;
+        }
+
+        .item {
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid rgba(0, 0, 0, .2);
+            margin: 6px 0;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+            cursor: pointer;
+            background: #fff;
+            transition: all .5s ease;
+        }
+
+        .item img {
+            width: 100%;
+        }
+
+        .columns:hover .item:not(:hover) {
+            opacity: .4;
+        }
+
+        p {
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        @media screen and (min-width:760px) {
+            .columns {
+                column-count: 4;
+            }
+        }
+
+        @media screen and (min-width:1100px) {
+            .columns {
+                column-count: 5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="columns">
+            <div class="item">
+                <img src="img3/1.jpg">
+                <p>description about the img</p>
+            </div>
+
+            <div class="item">
+                <img src="img3/2.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/3.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/4.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/5.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/6.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/7.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/8.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/9.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/10.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/1.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/12.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/13.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/14.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/15.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/16.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/17.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/18.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/19.jpg">
+                <p>description about the img</p>
+            </div>
+            <div class="item">
+                <img src="img3/20.jpg">
+                <p>description about the img</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
