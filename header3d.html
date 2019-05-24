@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<title>css draw 3d header</title>
+<head>
+    <title>hover img change img width</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+            background: rgba(0,0,0,.7);
+        }
+
+        .header{
+            width: 600px;
+            margin: 300px auto;
+            background: rgb(7, 205, 219);
+            border:4px solid rgba(255,255,255);
+            color: rgba(255,255,255);
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            font-weight: bold;
+            overflow:visible;
+            position: relative;
+        }
+        .header:before,.header:after{
+            content:'';
+            width: 0;
+            height: 0;
+            border:42px solid  rgb(7, 205, 219);
+            position:absolute;
+            box-sizing: border-box;
+            top: 10px;
+            z-index: -1;
+        }
+        .header:before{
+            border-left-color:transparent;
+            left: -60px;
+        }
+        .header:after{
+            border-right-color:transparent;
+            right: -60px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+        <div class="header">Pure CSS Ribbon Header</div>
+
+</body>
+
+</html>
