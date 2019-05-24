@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            position: relative;
+            display: flex;
+        }
+
+        .outer {
+            width: 150px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circle {
+            width: 300px;
+            height: 300px;
+            border: 10px solid rgb(223, 6, 205);
+            border-style: solid;
+            border-width: 10px;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: circle 2s linear forwards;
+        }
+
+        .circle.leftcircle {
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .circle.rightcircle {
+            position: absolute;
+            left: -150px;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            animation-delay: 2s;
+        }
+
+        @keyframes circle {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(225deg);
+            }
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="outer">
+            <div class="circle leftcircle"></div>
+        </div>
+        <div class="outer right">
+            <div class="circle rightcircle"></div>
+        </div>
+    </div>
+    <p id="para"></p>
+    <script>
+        window.onload = function(){
+        var para = document.getElementById('para');
+            var i=1,
+             timer;
+             add();
+             function add(){
+                var timer = setTimeout(function(){
+                    add();
+                },40);
+                para.innerHTML = i + '%';
+                i<100? i++:clearTimeout(timer);
+             }
+        }
+    </script>
+</body>
+
+</html>
