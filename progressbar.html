@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>css draw progress bar circle line</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            display: flex;
+            position: relative;
+        }
+
+        .outer {
+            width: 100px;
+            height: 200px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .outleft {
+            left: 0;
+            top: 0;
+        }
+
+        .outright {
+            right: 0;
+            top: 0;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 10px solid rgb(27, 221, 37);
+            position: absolute;
+            transform: rotate(45deg);
+            animation: circle 3s linear forwards ;
+        }
+
+        .left {
+            border-left-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        .right {
+            right: 0;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            animation-delay: 3s;
+        }
+        .line{
+            width: 500px;
+            height: 20px;
+            border-radius: 50px;
+            background:transparent;
+            margin: 100px auto;
+            position: relative;
+            /* border:1px solid rgb(8, 155, 57); */
+            border:1px solid rgb(8, 155, 57);
+        }
+        .line:before{
+            content:'';
+            height: 100%;
+            border-radius: 50px;
+            /* background: green; */
+            background:linear-gradient(45deg,red,blue) ;
+            position:absolute;
+            left:0;
+            top:0;
+            animation: changeWidth 3s linear infinite;
+        }
+        @keyframes changeWidth{
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+
+        @keyframes circle {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(225deg);
+            }
+        }
+    </style>
+</head>
+<div class="wrap">
+    <div class="outer outleft">
+        <div class="circle left"></div>
+    </div>
+    <div class="outer outright">
+        <div class="circle right"></div>
+    </div>
+</div>
+<div class="line"></div>
+
+</html>
