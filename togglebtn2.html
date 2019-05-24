@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			position: relative;
+		}
+
+		.toggle {
+			width: 300px;
+			height: 300px;
+			position: relative;
+			margin: 200px auto;
+			transition: .4s ease all;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+		}
+
+		a {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+
+		.bar,
+		.mid {
+			width: 300px;
+			height: 30px;
+			background: rgb(245, 28, 191);
+			border-radius: 50px;
+		}
+
+		.mid {
+			margin: 50px 0;
+		}
+
+		.change {
+			transform: rotate(-45deg);
+		}
+
+		.change .mid {
+			margin: 4px 0;
+		}
+
+		.change .bar {
+			width: 30px;
+			height: 48%;
+			border-radius: 50px 50px 0 0;
+		}
+
+		.change .top {
+			border-radius: 50px 50px 0 0;
+		}
+
+		.change .bottom {
+			border-radius: 0 0 50px 50px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="toggle" id="toggle">
+		<div class="bar top"></div>
+		<div class="mid"></div>
+		<div class="bar bottom"></div>
+		<a href="#"></a>
+	</div>
+	<script>
+		function hasClass(obj, cls) {
+			return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+		}
+
+		function addClass(obj, cls) {
+			if (!this.hasClass(obj, cls)) obj.className += " " + cls;
+		}
+
+		function removeClass(obj, cls) {
+			if (hasClass(obj, cls)) {
+				var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+				obj.className = obj.className.replace(reg, ' ');
+			}
+		}
+
+		function toggleClass(obj, cls) {
+			if (hasClass(obj, cls)) {
+				removeClass(obj, cls);
+			} else {
+				addClass(obj, cls);
+			}
+		}
+		var toggle = document.getElementById('toggle');
+		toggle.onclick = function () {
+			toggleClass(toggle, 'change');
+		}
+	</script>
+
+</body>
+
+</html>
