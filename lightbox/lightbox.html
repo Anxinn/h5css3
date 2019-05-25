@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            ;
+            background: url(img1/bg2.png) center center no-repeat;
+            background-size: cover;
+        }
+
+        .wrap {
+            width: 820px;
+            margin: 100px auto;
+        }
+
+        .wrap h5 {
+            background: rgb(23, 99, 170);
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 4px;
+            margin: 30px 0;
+            border: 5px solid rgba(255, 255, 255, .8);
+            border-top: none;
+            border-bottom: none;
+        }
+
+        .column {
+            column-count: 2;
+            column-gap: 20px;
+        }
+
+        .column .item {
+            background: #fff;
+            padding: 10px;
+            width: 400px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+
+        }
+
+        .column img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .item:before {
+            content: '';
+            line-height: 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: rgba(0, 0, 0, .5);
+            left: 0;
+            top: 0;
+            color: rgba(255, 255, 255, .8);
+            z-index: 1;
+            text-align: center;
+            opacity: 0;
+            transition: .3s;
+        }
+
+
+        .item:hover:before {
+            animation: opacity .5s forwards;
+        }
+
+        @keyframes opacity {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .change:before {
+            animation: scale .5s forwards;
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="wrap">
+        <h5>lightbox</h5>
+        <div class="column">
+            <div class="item">
+                <img src="img1/1.jpg">
+            </div>
+            <div class="item">
+                <img src="img1/2.jpg">
+            </div>
+            <div class="item">
+                <img src="img1/3.jpg">
+            </div>
+            <div class="item">
+                <img src="img1/4.jpg">
+            </div>
+            <div class="item">
+                <img src="img1/5.jpg">
+            </div>
+            <div class="item">
+                <img src="img1/6.jpg">
+            </div>
+        </div>
+    </div>
+    <script>
+        function hasClass(elements, cName) {
+            return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)"));
+        };
+
+        function addClass(elements, cName) {
+            if (!hasClass(elements, cName)) {
+                elements.className += " " + cName;
+            };
+        };
+
+        function removeClass(elements, cName) {
+            if (hasClass(elements, cName)) {
+                elements.className = elements.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)"), " ");
+            };
+        };
+        var wrap = document.getElementById('wrap');
+        var aBox = wrap.getElementsByClassName('item');
+        for (var i = 0; i < aBox.length; i++) {
+            aBox[i].onmouseleave = function () {
+                addClass(this, 'change')
+            }
+        }
+    </script>
+
+</body>
+
+</html>
