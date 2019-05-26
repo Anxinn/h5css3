@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>css draw progress bar circle line</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background:url(img/gpp.png) repeat;
+        }
+        .wrap{
+            width: 600px;
+            margin: 200px auto;
+        }
+        .form{
+            display:flex;
+            flex-direction: column;
+        }
+        label{
+            display:flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        input{
+            display:none;
+        }
+        .checkbox{
+            width: 30px;
+            height:30px;
+            border-radius: 50%;
+            border-width:2px;
+            border-style: solid;
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            margin:10px 20px;
+        }
+        .checkbox:before{
+            content:'';
+            display: inline-block;
+            border-width:2px;
+            border-style: solid;
+            border-top:none;
+            border-left:none;
+            transform: rotate(45deg);
+            opacity: 0;
+        }
+        label:nth-child(1) span,  label:nth-child(1) span:before{
+            border-color: green;
+        }
+        label:nth-child(2) span,  label:nth-child(2) span:before{
+            border-color: rgb(243, 3, 223);
+        }
+        label:nth-child(3) span,  label:nth-child(3) span:before{
+            border-color: rgb(243, 239, 8);
+        }
+        label:nth-child(4) span,  label:nth-child(4) span:before{
+            border-color: rgb(55, 0, 128);
+        }
+        label:nth-child(5) span,  label:nth-child(5) span:before{
+            border-color: rgb(238, 79, 5);
+        }
+        label:nth-child(6) span,  label:nth-child(6) span:before{
+            border-color: rgb(207, 7, 117);
+        }
+
+        input:checked +.checkbox:before{
+            animation: change .3s forwards;
+        }
+        p{
+            font-size: 20px;
+        }
+        @keyframes change{
+            0%{
+                height:0;
+                width:0;
+            }
+            50%{
+                opacity: 1;
+                height:0;
+                width:6px;
+            }
+            100%{
+                opacity: 1;
+                height:12px;
+                width:6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <p>Animated checkbox</p>
+        <div class="form">
+            <label>
+                <input type="checkbox">
+                <span class="checkbox"></span>
+                <span>create checkbox</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span class="checkbox"></span>
+                <span>Assign label</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span class="checkbox"></span>
+                <span>import icon</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span class="checkbox"></span>
+                <span>label elements</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span class="checkbox"></span>
+                <span>icon width</span>
+            </label>
+            <label>
+                <input type="checkbox">
+                <span class="checkbox"></span>
+                <span>icon color</span>
+            </label>
+        </div>
+    </div>
+</body>
+
+</html>
