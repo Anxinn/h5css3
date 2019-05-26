@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing: border-box;
+            }
+            body{
+                background: rgb(170, 209, 196);
+            }
+            .nav{
+                width: 800px;
+                display:flex;
+                margin: 400px auto;
+            }
+            .nav li{
+                width: 25%;
+                display: block;
+                border-left: 6px solid rgba(0,0,0,.7);
+                background:#fff;
+                padding: 4px 14px;
+                display: flex;
+                flex-direction: column;
+                font-size:14px;
+                line-height: 22px;
+                transition: .5s ease;
+                position: relative;
+            }
+            li>*{
+                transition: .5s ease;
+            }
+            li span:first-child{
+                color:#000;
+                font-style: italic;
+                text-transform: capitalize;
+            }
+
+            li span:nth-child(2){
+                color:rgba(0,0,0,.5);
+            }
+            li:hover{
+                background:#000;
+            }
+            li:hover span:first-child{
+                color:#fff;
+            }
+            li:hover span:nth-child(2){
+                color:gray;
+                margin-left: 10px;
+            }
+            li a{
+                position: absolute;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+            <li>
+                <span>home</span>
+                <span>welcome to</span>
+                <a href="#"></a>
+            </li>
+            <li>
+                <span>walkthroughts</span>
+                <span>watch/code/learn</span>
+                <a href="#"></a>
+            </li>
+            <li>
+                <span>about</span>
+                <span>who we are</span>
+                <a href="#"></a>
+            </li>
+            <li>
+                <span>feedback</span>
+                <span>help us improve</span>
+                <a href="#"></a>
+            </li>
+        </ul>
+
+    </body>
+</html>
