@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>css and js draw  a calculator</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(185, 184, 184);
+        }
+
+        #calculator {
+            width: 350px;
+            margin: 300px auto;
+            background: rgb(79, 175, 175);
+            height: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .top,
+        .keys {
+            display: flex;
+            justify-content: center;
+        }
+
+        .top .screen {
+            flex: 1;
+            background: gray;
+        }
+
+        .keys {
+            flex-wrap: wrap;
+
+        }
+
+        .keys span:nth-child(n+13) {
+            margin-bottom: 0;
+        }
+
+        span {
+            width: 66px;
+            height: 36px;
+            background: #fff;
+            text-align: center;
+            margin: 0 14px 14px 0;
+            line-height: 36px;
+            cursor: pointer;
+            box-shadow: 0 4px rgba(0, 0, 0, .2);
+            border-radius: 4px;
+            transition: all .5s ease;
+        }
+
+
+        .keys span:nth-child(4n),
+        .screen {
+            margin-right: 0;
+            background: rgb(223, 143, 156);
+        }
+
+        .top .screen {
+            box-shadow: inset 0 4px rgba(0, 0, 0, .2);
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .clear {
+            background: rgb(223, 79, 79);
+            box-shadow: 0 4px rgb(212, 27, 27);
+        }
+
+        .clear:hover {
+            background: red;
+        }
+
+        .eval {
+            background: rgb(228, 204, 124);
+            box-shadow: 0 4px rgb(182, 142, 11);
+        }
+
+        .keys .eval:hover {
+            background: rgb(119, 112, 16);
+        }
+
+        span:hover,
+        .keys span:hover {
+            background: rgb(136, 48, 136);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calculator">
+        <div class="top">
+            <span class="clear">C</span>
+            <span class="screen"></span>
+        </div>
+        <div class="keys">
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span class="operator">+</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span class="operator">-</span>
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span class="operator">/</span>
+            <span>0</span>
+            <span>.</span>
+            <span class="eval">=</span>
+            <span class="operator">x</span>
+        </div>
+    </div>
+
+    <script>
+        var cal = document.getElementById('calculator');
+        var keys = document.querySelectorAll('#calculator span');
+        var deci = false;
+        var operators = ['+', '-', 'x', '÷'];
+
+        for (var i = 0; i < keys.length; i++) {
+            keys[i].onclick = function () {
+                var input = document.querySelector('.screen');
+                var inputVal = input.innerHTML;
+                var btnVal = this.innerHTML;
+                if (btnVal == 'C') {
+                    input.innerHTML = '';
+                    deci = false;
+                } else if (btnVal == '=') {
+
+                    var equation = inputVal;
+                    var lastChar = equation[equation.length - 1];
+
+                    equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
+
+                    if (operators.indexOf(lastChar) > -1 || lastChar == '.')
+                        equation = equation.replace(/.$/, '');
+
+                    if (equation)
+                        input.innerHTML = eval(equation);
+
+                    deci = false;
+                } else if (operators.indexOf(btnVal) > -1) {
+                    var lastChar = inputVal[inputVal.length - 1];
+
+                    if (inputVal != '' && operators.indexOf(lastChar) == -1)
+                        input.innerHTML += btnVal;
+
+                    else if (inputVal == '' && btnVal == '-')
+                        input.innerHTML += btnVal;
+
+                    if (operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
+                        input.innerHTML = inputVal.replace(/.$/, btnVal);
+                    }
+                    deci = false;
+                } else if (btnVal == '.') {
+                    if (!deci) {
+                        input.innerHTML += btnVal;
+                        deci = true;
+                    }
+                } else {
+                    input.innerHTML += btnVal;
+                }
+                return false;
+                // e.preventDefault();
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
