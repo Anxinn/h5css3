@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "iconfont";
+            src: url('font/iconfont.eot?t=1559044154190');
+            /* IE9 */
+            src: url('font/iconfont.eot?t=1559044154190#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('font/data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPcAAsAAAAAB9wAAAOOAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDIIMBATYCJAMQCwoABCAFhG0HPRvoBhGFdJL9kCSEqqIACgCVAACgD5blMQsAAsAsQDz8/37t93n3znBHEtJEE2viQBJdnQRJLUFIRBKeEqUSCnypGtL34/3L5m8gVID0NjJK+2JUR6/prAAwVXIZJqL/HdeiA3SR41bqPv0f91MXiQPLZ9/mUk2R1H3+aTfAUbQOKLqEphsgbhi7oCVuJtA0rCNW9UxsoMjMXoG4CPT3hJJRyw3JoQj1iokZ4g6IlCof9wrcBr+PH6SigEotgTlwzU/XBxZftF//EqD/iIuHAeF0RrBpJHSQiZNK8x6kyNeRNNXm2QyKomKqGs7Xv///I9FRFMVSGPrHq4g6mIlt0IXydGFCByHxhRMh+PI3QQUfRFM8UeAawAsmDg4PIfWKCFO2k4+ObE5O7Lyw43vb00f75DHJiNHnqWAAC/KCo6P17fkjQFyoHlBVAXMNM/tJ4O1PqSjgsYOFTL7P9ujAVLCfqbCakbOOsaqOqbqbv/bUuvrUvtamntjRao5stqg6tnWmqq5GVeTtghp8rS1VIWrU2CumPWkS8V7cWhYXL2SCBeGKi3FnFKvTH5qXa5aVv1IuZLiFzwa1qkFdT0fXzylNfZMgY1WzpN2e46KzneFiJBgnKvl0Dl3e7ZU6x2AOvfXTtIR86i5nPx19PeSsYjlQ6XmOiSpPjZZiw2fK9DTSDHTwa9z2s6iogDV5g25j05d0OmWGIfOW12cjIjqHvlyOtcfcti90ZOya9bo9Qok8i83kbcjnFIZ8WA81mwv/B9Nd4gmwT1i1QEd6TJ4/sZPr6uev4jm5/FqiD5H11rebI8v/jgzdlK4/Iews/GXCjilZE5uanBWJI9ATswMv170nNUW4/KgQvW6mUA10TiSE5BOoBJUgCalhM7EHNVEzqAvZQFOX/vSWrChe7tzgMiUbgFvKKHgk/INXyg7WR7wGv4K3EJAKL0T8RXbBqEaozcMlXhkf4PWGwLuwJFvHkTD5C+WncaW0OKD/ITmqEyTFJPLBT7SQphgS/ZInMSyBHwkT9MB2aBgCIkhoeOdBALM9Fxf3q3rTwFuYrogDgq4YegBe3kCgO8EieZlZpPD9L0j2ZLiiBlSV8w8iDrV+IEmMRAfsp8LqhLqVa6K9yCZiMAnwQwQT0ANGZFg+AURUt9OgOzYQMMBjmxNH6fy6KgbLq8w3XARN5iI5qkiRo8Z/cngl9jsnXjR6zSvZ5QIAAA==') format('woff2'),
+                url('font/iconfont.woff?t=1559044154190') format('woff'),
+                url('font/iconfont.ttf?t=1559044154190') format('truetype'),
+                /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+                url('font/iconfont.svg?t=1559044154190#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-heart:before {
+            content: "\e71c";
+        }
+
+        .icon-share:before {
+            content: "\e7fd";
+        }
+
+        .icon-msg:before {
+            content: "\e643";
+        }
+
+        body {
+            background: rgb(48, 47, 47);
+        }
+
+        .wrap {
+            position: absolute;
+            background: #fff;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            transform: translate(-50%, -50%);
+            /* 容器未知高度宽度的居中好方法 */
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .box span {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            color: rgba(255, 255, 255, .9);
+            font-size: 40px;
+            text-transform: uppercase;
+            transition: .8s;
+        }
+
+        .wrap:hover .box span {
+            top: 12%;
+            transform: scale(.9);
+        }
+
+
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(0, 0, 0, .5);
+        }
+
+        .iconfont {
+            position: absolute;
+            right: 0;
+            font-size: 26px;
+        }
+
+        .icon-heart {
+            right: 110px;
+            transition: .5s;
+        }
+
+        .icon-msg {
+            right: 70px;
+            transition: .8s;
+        }
+
+        .icon-share {
+            right: 30px;
+            transition: 1.2s;
+        }
+
+        .wrap:hover .iconfont {
+            margin-top: -220px;
+        }
+        /* 在transform和animation中，top,margintop,left,right.bottom,marginleft,等都可以用translateXY达到同样的，静态或动态，效果； */
+
+
+        .iconfont:hover {
+            color: red;
+        }
+
+        .updown {
+            width: 300%;
+            height: 150px;
+            background: rgba(255, 255, 255, .6);
+            margin-left: -150%;
+            transition: .7s;
+        }
+
+        .wrap:hover .updown {
+            transform: rotate(-18deg);
+        }
+
+        p {
+            text-align: center;
+            font-size: 30px;
+            color: rgba(255, 255, 255, .8);
+            margin-top: 140px;
+            font-weight: lighter;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hover img</p>
+    <div class="wrap">
+        <div class="box">
+            <span>img title</span>
+            <img src="../img/1.jpg">
+        </div>
+        <div class="updown"></div>
+        <a href="#"><i class="iconfont icon-heart"></i></a>
+        <a href="#"><i class="iconfont icon-msg"></i></a>
+        <a href="#"><i class="iconfont icon-share"></i></a>
+    </div>
+
+</body>
+
+</html>

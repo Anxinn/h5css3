@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "iconfont";
+            src: url('font/iconfont.eot?t=1558513143669');
+            /* IE9 */
+            src: url('font/iconfont.eot?t=1558513143669#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('font/iconfont.woff?t=1558513143669') format('woff'),
+                url('font/iconfont.ttf?t=1558513143669') format('truetype'),
+                /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+                url('font/iconfont.svg?t=1558513143669#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-pinterest:before {
+            content: "\e74e";
+        }
+
+        .icon-weibiaoti505:before {
+            content: "\e612";
+        }
+
+        .icon-github:before {
+            content: "\e709";
+        }
+
+        .icon-facebook:before {
+            content: "\e6e5";
+        }
+
+        .icon-twitter:before {
+            content: "\e69b";
+        }
+
+        .s {
+            width: 900px;
+            display: flex;
+            margin: 20px auto;
+            justify-content: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 50px 30px;
+            border: 2px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .iconfont {
+            display: inline;
+            font-size: 30px;
+        }
+
+        .s1 {
+            background: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .8));
+        }
+
+        .s2 {
+            background: linear-gradient(to left, rgba(0, 0, 0, .4), rgba(0, 0, 0, .8));
+        }
+
+        .s3 {
+            background: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .8));
+        }
+
+        .s4 {
+            background: linear-gradient(to left, rgba(0, 0, 0, .4), rgba(0, 0, 0, .8));
+        }
+
+        .s1 a {
+            border-color: transparent;
+            position: relative;
+        }
+
+        .s1 a:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: inline-block;
+            border: 2px dashed #fff;
+            box-sizing: border-box;
+            /* before,after,对于默认的boxsizing不起作用，需要单独设定，这样才可以实现居中 */
+        }
+
+        .s1 a:hover:before,
+        .s2 a:hover .iconfont {
+            animation: change 1s linear infinite;
+        }
+
+        .s3 a,
+        .s4 a {
+            position: relative;
+        }
+
+        .s3 a:before,
+        .s4 a:before {
+            content: '';
+            position: absolute;
+            left: 1px;
+            right: 1px;
+            top: 1px;
+            bottom: 1px;
+            border-radius: 50%;
+            display: inline-block;
+            background: #fff;
+            transition: .2s;
+        }
+
+        .s3 a .iconfont,
+        .s4 a .iconfont {
+            color: rgba(0, 0, 0, .6);
+            z-index: 1;
+        }
+
+        .s4 a .iconfont {
+            transition: .5s;
+        }
+
+        .s3 a:hover:before {
+            transform: scale(.8);
+        }
+
+        .s4 a:hover:before {
+            opacity: .1;
+            transform: scale(1.4);
+        }
+
+        .s4 a:hover .iconfont {
+            color: #fff;
+        }
+
+        @keyframes change {
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+        p {
+            text-align: center;
+            font-size: 40px;
+            color: rgba(0, 0, 0, .6);
+            text-transform: capitalize;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>hover icon</p>
+    <section class="s s1">
+        <a href="#"><i class="iconfont icon-facebook"></i></a>
+        <a href="#"><i class="iconfont icon-twitter"></i></a>
+        <a href="#"><i class="iconfont icon-github"></i></a>
+        <a href="#"><i class="iconfont icon-weibiaoti505"></i></a>
+        <a href="#"><i class="iconfont icon-pinterest"></i></a>
+    </section>
+    <section class="s s2">
+        <a href="#"><i class="iconfont icon-facebook"></i></a>
+        <a href="#"><i class="iconfont icon-twitter"></i></a>
+        <a href="#"><i class="iconfont icon-github"></i></a>
+        <a href="#"><i class="iconfont icon-weibiaoti505"></i></a>
+        <a href="#"><i class="iconfont icon-pinterest"></i></a>
+    </section>
+    <section class="s s3">
+        <a href="#"><i class="iconfont icon-facebook"></i> </a>
+        <a href="#"><i class="iconfont icon-twitter"></i></a>
+        <a href="#"><i class="iconfont icon-github"></i></a>
+        <a href="#"><i class="iconfont icon-weibiaoti505"></i></a>
+        <a href="#"><i class="iconfont icon-pinterest"></i></a>
+    </section>
+    <section class="s s4">
+        <a href="#"><i class="iconfont icon-facebook"></i></a>
+        <a href="#"><i class="iconfont icon-twitter"></i></a>
+        <a href="#"><i class="iconfont icon-github"></i></a>
+        <a href="#"><i class="iconfont icon-weibiaoti505"></i></a>
+        <a href="#"><i class="iconfont icon-pinterest"></i></a>
+    </section>
+</body>
+
+</html>
