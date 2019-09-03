@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>skew menu</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .nav {
+            border-top: 2px solid #000;
+            width: 700px;
+            margin: 300px auto;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        li {
+            width: 150px;
+            text-align: center;
+            margin:0 10px;
+            height: 50px;
+            display: block;
+            transform: skew(-30deg);
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            background: rgb(238, 235, 235);
+            color:#000;
+        }
+        li>*{
+            height: 50px;
+            line-height: 50px;
+        }
+        li span{
+            display: block;
+            transform: skew(30deg);
+        }
+        .bottom{
+            background:rgb(90, 89, 89);
+            color:#fff; 
+            transition: .4s;
+        }
+        li:hover .bottom{
+            margin-top: -50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a href="#"><span class="nav-text">首页</span></a>
+                <div class="bottom"><span>home</span></div>
+            </li>
+            <li>
+                <a href="#"><span class="nav-text">首页</span></a>
+                <div class="bottom"><span>home</span></div>
+            </li>
+            <li>
+                <a href="#"><span class="nav-text">首页</span></a>
+                <div class="bottom"><span>home</span></div>
+            </li>
+            <li>
+                <a href="#"><span class="nav-text">首页</span></a>
+                <div class="bottom"><span>home</span></div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
