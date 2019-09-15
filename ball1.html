@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgb(91, 172, 219), rgb(222, 225, 226));
+        }
+
+        .ball {
+            position: absolute;
+            width: 300px;
+            left: 50%;
+            /* top: 50%; */
+            transform: translateX(-50%) scaleY(1.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            animation: updown 3s linear infinite;
+        }
+        @keyframes updown{
+            0%{
+                margin-top: 100px;
+            }
+            40%{
+                margin-top: 190px;
+            }
+            60%{
+                margin-top: 200px;
+            }
+            90%{
+                margin-top: 90px;
+            }
+            100%{
+                margin-top: 100px;
+            }
+        }
+
+        .top {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            height: 300px;
+        }
+
+        .top span {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: rgb(189, 110, 46);
+        }
+
+        .top span:nth-child(2) {
+            background: rgb(151, 79, 37);
+            /* width: 50%; 和下面scale(0.5)效果一样*/
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%) scaleX(0.5);
+        }
+
+        .top span:after {
+            display: block;
+            content: '';
+            border-width: 150px 80px 0 80px;
+            border-style: solid;
+            border-color: rgb(189, 110, 46) transparent transparent transparent;
+            width: 100px;
+            height: 0;
+            position: absolute;
+            top:73%;
+            left: 6%;
+        }
+
+        .top span:nth-child(2):after {
+            border-top-color: rgb(151, 79, 37);
+        }
+        .bottom{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top:120%;
+            z-index: -1;
+            display: flex;
+            justify-content: space-between;
+        }
+        .bottom span{
+            width: 4px;
+            height: 70px;
+            background:rgb(77, 74, 71);
+            display: inline-block;
+        }
+        .bottom span:nth-child(1){
+            transform: rotate(-20deg);
+        }
+        .bottom span:nth-child(2){
+            transform: rotate(-10deg);
+        }
+        .bottom span:nth-child(3){
+            transform: rotate(10deg);
+        }
+        .bottom span:nth-child(4){
+            transform: rotate(20deg);
+        }
+        .bottom:before{
+            content: '';
+            width: 70%;
+            height:10px;
+            background:rgb(77, 74, 71);
+            position:absolute;
+            display: block;
+            bottom:10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .bottom:after{
+            content:'';
+            width: 70%;
+            height:70px;
+            border-radius: 4px;
+            background: #000;
+            position:absolute;
+            display: block;
+            top:68px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ball">
+        <div class="top">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="bottom">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
