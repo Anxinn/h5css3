@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+                box-sizing: border-box;
+            }
+            .menu{
+                width: 240px;
+                margin: 200px auto;
+            }
+            span{
+                color: #fff;
+                text-transform: uppercase;
+                display: block;
+                padding: 20px ;
+                background: linear-gradient(to right,rgba(0,0,0,.8), rgba(0,0,0,.2));
+                margin: 10px 0;
+                transform: perspective(200px) rotateY(20deg);
+                transition: 0.6s;
+                text-align: left;
+                cursor: pointer;
+            }
+            span:nth-child(2n){
+                background: linear-gradient(to left,rgba(0,0,0,.8), rgba(0,0,0,.2));
+                transform: perspective(200px) rotateY(-20deg);
+                text-align: right;
+            }
+            span:hover{
+                transform: perspective(100px) rotateY(20deg);
+            }
+            span:nth-child(2n):hover{
+                transform: perspective(100px) rotateY(-20deg);
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <span>home</span>
+            <span>about</span>
+            <span>service</span>
+            <span>contact</span>
+        </div>
+
+    </body>
+</html>
