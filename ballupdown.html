@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .warp {
+            width: 400px;
+            height: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 10px solid gray;
+            padding: 100px;
+        }
+
+        .top,
+        .bottom {
+            width: 50%;
+            height: 10px;
+            background: gray;
+            position: absolute;
+        }
+
+        .top {
+            left: 0;
+            top: 10px;
+            animation: atop 1s ease-in-out infinite;
+        }
+
+        .ball {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: gray;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            margin-left: -10px;
+            animation: ball 1s ease-in-out infinite;
+        }
+
+        .bottom {
+            right: 0;
+            bottom: 10px;
+            animation: abottom 1s ease-in-out infinite;
+        }
+        @keyframes ball{
+            0%,100%{
+                top:20px;
+            }
+            50%{
+                top:540px;
+            }
+
+        }
+        @keyframes atop{
+            0%,100%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(100%);
+            }
+        }
+        @keyframes abottom{
+            0%,100%{
+                transform: translateX(0);
+            }
+            50%{
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="warp">
+        <div class="top side"></div>
+        <div class="ball"></div>
+        <div class="bottom side"></div>
+    </div>
+</body>
+
+</html>
