@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>my page</title>
+    <!-- <link rel="stylesheet" href="1css.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 100px;
+            font-weight: lighter;
+        }
+
+        .wrap {
+            position: absolute;
+            border: 1px solid yellow;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        .wrap:after {
+            content: '';
+            border-width: 30px 30px 0;
+            /* 将相对的border设置为0，会自动垂直居中 */
+            border-style: solid;
+            border-color: red transparent;
+        }
+        .wrap:hover:after{
+            border-width: 0 30px 30px;
+            /* 将相对的border设置为0会自动的垂直居中 */
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>
